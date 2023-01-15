@@ -73,6 +73,16 @@ new Swiper('.promotion .swiper-container', {
     nextEl: '.promotion .swiper-next',
   },
 });
+new Swiper('.awards .swiper-container', {
+  autoplay: true,
+  loop: true,
+  slidesPerView: 5,
+  spaceBetween: 30,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next',
+  },
+});
 
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
@@ -114,3 +124,17 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', 0.5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+const spyEls = document.querySelectorAll('section.scroll-spy');
+
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic.Scene({
+    triggerElement: spyEl, // 트리거를 할 대상 , 보여짐 여부를 감시할 요소
+    triggerHook: 0.8, // 뷰포트 가장 윗부분은 0 , 가장 아랫부분은 1 기준
+  })
+    .setClassToggle(spyEl, 'show')
+    .addTo(new ScrollMagic.Controller()); // ScrollMagin 라이브러리를 활용하기 위해서 필요한 내용
+});
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear(); //2023년
