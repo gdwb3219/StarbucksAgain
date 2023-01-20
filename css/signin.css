@@ -28,6 +28,10 @@
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
+.signin__card h2 strong {
+  font-weight: 700;
+  color: #006633;
+}
 .signin__card form {
   padding: 30px 22px;
 }
@@ -40,4 +44,35 @@
   outline: none;
   box-sizing: border-box;
   font-size: 14px;
+}
+.signin__card form [type='submit'] {
+  background-color: #006633;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.signin__card form p {
+  font-size: 12px;
+  color: #006633;
+  text-align: center;
+}
+.signin__card .actions {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+.signin__card .actions a {
+  font-size: 14px;
+  color: #555;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.signin__card .actions a:last-child {
+  border-right: none;
+}
+.signin__card .actions a:hover {
+  text-decoration: underline;
 }
